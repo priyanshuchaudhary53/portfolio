@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import { motion } from "framer-motion";
 
 const AnimatedText = ({
@@ -35,9 +35,8 @@ const AnimatedText = ({
     <>
       {text.split(" ").map((word, index) => {
         return (
-          <>
+          <Fragment key={"word-" + index}>
             <span
-              key={index}
               className={
                 className ? className + " inline-block" : "inline-block"
               }
@@ -45,7 +44,7 @@ const AnimatedText = ({
               {word.split("").map((letter, i) => {
                 return (
                   <motion.span
-                    key={letter + "-" + i}
+                    key={`letter-${index}-${i}`}
                     variants={child}
                     className="inline-block"
                   >
@@ -55,7 +54,7 @@ const AnimatedText = ({
               })}
             </span>
             {"\u00A0"}
-          </>
+          </Fragment>
         );
       })}
     </>
