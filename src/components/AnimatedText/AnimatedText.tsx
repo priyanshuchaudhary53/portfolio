@@ -53,7 +53,7 @@ const AnimatedText = ({
                 );
               })}
             </span>
-            {"\u00A0"}
+            {index === text.split(" ").length - 1 ? "" : " "}
           </Fragment>
         );
       })}

@@ -3,11 +3,14 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import portrait from "../../public/images/portrait.jpg";
+import eternitech from "../../public/images/eternitech.png";
+import weanim8 from "../../public/images/weanim8.png";
 import { FiCamera } from "react-icons/fi";
 
 import AnimatedText from "@/components/AnimatedText/AnimatedText";
 import AnimatedTextWrapper from "@/components/AnimatedText/AnimatedTextWrapper";
 import Link from "next/link";
+import PortfolioGridItem from "@/components/PortfolioGridItem";
 
 const opacityVariants: Variants = {
   offscreen: {
@@ -18,6 +21,15 @@ const opacityVariants: Variants = {
     transition: {
       duration: 1.0,
     },
+  },
+};
+
+const headingVariants: Variants = {
+  offscreen: { y: 10, opacity: 0 },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, type: "tween", damping: 12, stiffness: 100 },
   },
 };
 
@@ -34,7 +46,7 @@ export default function Home() {
         <div className="px-[20px] max-w-[1440px] mx-auto md:px-[40px] lg:px-[72px]">
           <h1 className="text-6xl font-bold text-center tracking-tight text-gray-800 dark:text-white mb-[40px] md:text-left md:text-[6rem]">
             <AnimatedTextWrapper>
-              <AnimatedText text={mainText1} />
+              <AnimatedText text={mainText1} />{" "}
               <AnimatedText text={mainText2} className="text-gray-400" />
             </AnimatedTextWrapper>
           </h1>
@@ -44,7 +56,7 @@ export default function Home() {
                 className="border-t border-gray-400"
                 initial={{ width: "0" }}
                 animate={{ width: "100%" }}
-                transition={{ duration: 0.5, delay: 1.8 }}
+                transition={{ duration: 0.5, delay: 1 }}
               ></motion.div>
             </div>
             <motion.div
@@ -52,8 +64,8 @@ export default function Home() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.5,
-                delay: 2.3,
+                duration: 0.4,
+                delay: 1.5,
                 type: "tween",
                 damping: 12,
                 stiffness: 100,
@@ -66,11 +78,19 @@ export default function Home() {
       </section>
       <section className="py-[40px] lg:py-[72px]">
         <div className="px-[20px] max-w-[1440px] mx-auto md:px-[40px] lg:px-[72px]">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-14 items-center">
+          <motion.div
+            className="flex flex-col md:flex-row gap-8 md:gap-14 items-start"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+          >
             <div className="w-full md:w-6/12 lg:w-5/12">
-              <div className="rounded-2xl overflow-hidden relative">
+              <motion.div
+                className="rounded-2xl overflow-hidden relative group"
+                variants={opacityVariants}
+              >
                 <Image
-                  className="grayscale brightness-110"
+                  className="grayscale brightness-110 transition-all duration-500 ease-out group-hover:grayscale-0 group-hover:scale-[1.025]"
                   src={portrait}
                   alt="Picture of the author"
                 />
@@ -79,17 +99,12 @@ export default function Home() {
                   <FiCamera />
                   <Link href="#">Nainital, Uttarakhand</Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
-            <motion.div
-              className="w-full md:w-6/12 lg:w-7/12"
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true, amount: 0.8 }}
-            >
+            <div className="w-full md:w-6/12 lg:w-7/12">
               <motion.h2
-                className="text-5xl font-semibold tracking-tight text-gray-800 dark:text-white mb-[20px] md:text-[4rem]"
-                variants={opacityVariants}
+                className="text-5xl font-semibold tracking-tight text-gray-800 dark:text-white mb-[20px] md:text-7xl"
+                variants={headingVariants}
               >
                 Who Am I?
               </motion.h2>
@@ -106,7 +121,43 @@ export default function Home() {
                 craft exceptional digital experiences. Let's connect and explore
                 the limitless possibilities together.
               </motion.p>
-            </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      <section className="py-[40px] lg:py-[72px]">
+        <div className="px-[20px] max-w-[1440px] mx-auto md:px-[40px] lg:px-[72px]">
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+          >
+            <motion.h2
+              className="text-5xl font-semibold tracking-tight text-gray-800 dark:text-white mb-12 md:mb-20 md:text-7xl"
+              variants={headingVariants}
+            >
+              A small selection of my work.
+            </motion.h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+            <PortfolioGridItem
+              title="Eternitech"
+              description="WordPress website for a tech startup."
+              image={eternitech}
+              imageAlt="Eternitech Website Screenshot"
+              imageWidth="w-3/4"
+              link="#"
+              animationVariant={opacityVariants}
+            />
+            <PortfolioGridItem
+              title="WeAnim8"
+              description="WordPress website for an animation studio."
+              image={weanim8}
+              imageAlt="WeAnim8 Website Screenshot"
+              imageWidth="w-[60%]"
+              link="#"
+              animationVariant={opacityVariants}
+            />
           </div>
         </div>
       </section>
