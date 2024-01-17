@@ -200,7 +200,7 @@ export default function Home() {
                   },
                 }}
               >
-                Let's Talk <GoArrowRight className=" text-3xl" />
+                Let&apos;s Talk <GoArrowRight className=" text-3xl" />
               </motion.a>
             </motion.div>
           </div>
@@ -248,13 +248,13 @@ export default function Home() {
                 className="text-gray-600 text-lg dark:text-white"
                 variants={opacityVariants}
               >
-                I'm Priyanshu Chaudhary, a textile graduate who discovered a
+                I&apos;m Priyanshu Chaudhary, a textile graduate who discovered a
                 deep-rooted passion for coding. My journey as a freelance
                 developer began in late 2019, but it was the unexpected twists
                 of 2020 that truly ignited my commitment. Despite the
                 challenges, I embraced the lockdown period to immerse myself in
                 coding, emerging with newfound skills and a relentless drive to
-                craft exceptional digital experiences. Let's connect and explore
+                craft exceptional digital experiences. Let&apos;s connect and explore
                 the limitless possibilities together.
               </motion.p>
             </div>
