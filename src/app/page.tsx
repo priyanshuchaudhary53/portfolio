@@ -78,7 +78,9 @@ const portfolioItems = [
 
 export default function Home() {
   const [selectedPortfolioId, setSelectedPortfolioId] = useState("");
-  const selectedPortfolio = portfolioItems.find(portfolio => portfolio.id === selectedPortfolioId);
+  const selectedPortfolio = portfolioItems.find(
+    (portfolio) => portfolio.id === selectedPortfolioId
+  );
 
   const mainText1 = "I'm a developer with a passion for crafting";
   const mainText2 = "exceptional digital experiences";
@@ -310,7 +312,7 @@ export default function Home() {
                     </div>
                     <div className="w-full max-w-4xl mx-auto">
                       <h2 className="text-5xl font-semibold tracking-tight text-gray-800 dark:text-white mb-12 md:mb-20 md:text-7xl">
-                        {selectedPortfolio?.title || 'Portfolio Title'}
+                        {selectedPortfolio?.title || "Portfolio Title"}
                       </h2>
                     </div>
                   </motion.div>
