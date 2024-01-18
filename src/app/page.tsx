@@ -45,7 +45,7 @@ const portfolioItems = [
     description: "WordPress website for a tech startup.",
     image: eternitech,
     imageAlt: "Eternitech Website Screenshot",
-    imageWidth: "w-3/4",
+    imageWidth: "w-[90%] sm:w-[75%]",
   },
   {
     id: "p2",
@@ -53,7 +53,7 @@ const portfolioItems = [
     description: "WordPress website for an animation studio.",
     image: weanim8,
     imageAlt: "WeAnim8 Website Screenshot",
-    imageWidth: "w-[63%]",
+    imageWidth: "w-[75%] sm:w-[63%]",
     onClick: () => {},
   },
   {
@@ -62,7 +62,7 @@ const portfolioItems = [
     description: "Laravel website for CRM and lead management.",
     image: leadsSupport,
     imageAlt: "Leads Support Website Screenshot",
-    imageWidth: "w-[70%]",
+    imageWidth: "w-[85%] sm:w-[70%]",
     onClick: () => {},
   },
   {
@@ -71,7 +71,7 @@ const portfolioItems = [
     description: "Laravel website for online tools.",
     image: anyonlinetool,
     imageAlt: "AnyOnlineTool Website Screenshot",
-    imageWidth: "w-[67%]",
+    imageWidth: "w-[82%] sm:w-[67%]",
     onClick: () => {},
   },
 ];
@@ -220,11 +220,11 @@ export default function Home() {
                 variants={opacityVariants}
               >
                 <Image
-                  className="grayscale brightness-110 transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.025]"
+                  className="md:grayscale brightness-110 transition-all duration-700 ease-out md:group-hover:grayscale-0 md:group-hover:scale-[1.025]"
                   src={portrait}
                   alt="Picture of the author"
                 />
-                <div className="absolute right-0 top-0 bottom-0 left-auto bg-gray-400 w-32 mix-blend-multiply"></div>
+                <div className="absolute right-0 top-0 bottom-0 left-auto bg-gray-400 w-[25%] mix-blend-multiply"></div>
                 <div className="absolute bottom-3 left-3 text-md font-light text-white flex items-center gap-2 bg-black/60 rounded-lg px-2 py-1">
                   <FiCamera />
                   <a

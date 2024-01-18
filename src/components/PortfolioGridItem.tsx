@@ -35,13 +35,13 @@ const PortfolioGridItem = ({
       variants={variants}
       viewport={{ once: true, amount: 0.5 }}
     >
-      <motion.div className="cursor-pointer bg-neutral-200 dark:bg-neutral-800 rounded-3xl aspect-video relative group" onClick={onClick} layoutId={id}>
+      <motion.div className="cursor-pointer bg-neutral-200 dark:bg-neutral-800 rounded-3xl aspect-[16/11] sm:aspect-video relative group" onClick={onClick} layoutId={id}>
         <motion.div
           className={`absolute bottom-3 left-1/2 -translate-x-1/2 ${imageWidth}`}
           variants={animationVariant}
         >
           <Image
-            className="drop-shadow-xl w-full grayscale transition-all duration-700 ease-out group-hover:grayscale-0 origin-bottom group-hover:scale-[1.025]"
+            className="drop-shadow-xl w-full scale-105 md:scale-100 md:grayscale transition-all duration-700 ease-out md:group-hover:grayscale-0 origin-bottom md:group-hover:scale-[1.025]"
             src={image}
             alt={imageAlt}
           />
