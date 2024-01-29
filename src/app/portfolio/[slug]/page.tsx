@@ -27,7 +27,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
               {portfolio.title}
             </h1>
           </div>
-          <div className="rounded-3xl w-full max-w-4xl aspect-[4/3] overflow-clip border-2 border-gray-200 dark:border-gray-800 ">
+          <div className="rounded-3xl w-full max-w-4xl aspect-[4/3] overflow-clip border-2 bg-gray-200 dark:bg-gray-800 border-gray-200 dark:border-gray-800 ">
             <Image
               src={`/images/portfolio/${portfolio.slug}/home.jpg`}
               className="object-cover w-full h-full object-left-top"
