@@ -46,6 +46,7 @@ const portfolioItems = [
     image: eternitech,
     imageAlt: "Eternitech Website Screenshot",
     imageWidth: "w-[90%] sm:w-[75%]",
+    slug: "eternitech",
   },
   {
     id: "p2",
@@ -54,7 +55,7 @@ const portfolioItems = [
     image: weanim8,
     imageAlt: "WeAnim8 Website Screenshot",
     imageWidth: "w-[75%] sm:w-[63%]",
-    onClick: () => {},
+    slug: "weanim8",
   },
   {
     id: "p3",
@@ -63,7 +64,7 @@ const portfolioItems = [
     image: leadsSupport,
     imageAlt: "Leads Support Website Screenshot",
     imageWidth: "w-[85%] sm:w-[70%]",
-    onClick: () => {},
+    slug: "leads-support",
   },
   {
     id: "p4",
@@ -72,16 +73,11 @@ const portfolioItems = [
     image: anyonlinetool,
     imageAlt: "AnyOnlineTool Website Screenshot",
     imageWidth: "w-[82%] sm:w-[67%]",
-    onClick: () => {},
+    slug: "anyonlinetool",
   },
 ];
 
 export default function Home() {
-  const [selectedPortfolioId, setSelectedPortfolioId] = useState("");
-  const selectedPortfolio = portfolioItems.find(
-    (portfolio) => portfolio.id === selectedPortfolioId
-  );
-
   const mainText1 = "I'm a developer with a passion for crafting";
   const mainText2 = "exceptional digital experiences";
 
@@ -90,7 +86,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="py-[40px] lg:py-[72px] lg:pt-10">
+      <section className="py-14 lg:py-20 lg:pt-10">
         <div className="px-[20px] max-w-[1440px] mx-auto md:px-[40px] lg:px-[72px]">
           <h1 className="text-6xl font-bold text-center tracking-tight text-gray-800 dark:text-white mb-[40px] md:text-left md:text-[6rem]">
             <AnimatedTextWrapper>
@@ -206,7 +202,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-[40px] lg:py-[72px]">
+      <section className="py-14 lg:py-20">
         <div className="px-[20px] max-w-[1440px] mx-auto md:px-[40px] lg:px-[72px]">
           <motion.div
             className="flex flex-col md:flex-row gap-8 md:gap-14 items-start"
@@ -220,7 +216,7 @@ export default function Home() {
                 variants={opacityVariants}
               >
                 <Image
-                  className="md:grayscale brightness-110 transition-all duration-700 ease-out md:group-hover:grayscale-0 md:group-hover:scale-[1.025]"
+                  className="brightness-110 transition-all duration-500 ease-out md:group-hover:scale-[1.025]"
                   src={portrait}
                   alt="Picture of the author"
                 />
@@ -248,20 +244,20 @@ export default function Home() {
                 className="text-gray-600 text-lg dark:text-white"
                 variants={opacityVariants}
               >
-                I&apos;m Priyanshu Chaudhary, a textile graduate who discovered a
-                deep-rooted passion for coding. My journey as a freelance
+                I&apos;m Priyanshu Chaudhary, a textile graduate who discovered
+                a deep-rooted passion for coding. My journey as a freelance
                 developer began in late 2019, but it was the unexpected twists
                 of 2020 that truly ignited my commitment. Despite the
                 challenges, I embraced the lockdown period to immerse myself in
                 coding, emerging with newfound skills and a relentless drive to
-                craft exceptional digital experiences. Let&apos;s connect and explore
-                the limitless possibilities together.
+                craft exceptional digital experiences. Let&apos;s connect and
+                explore the limitless possibilities together.
               </motion.p>
             </div>
           </motion.div>
         </div>
       </section>
-      <section className="py-[40px] lg:py-[72px]">
+      <section className="py-12 lg:py-20">
         <div className="px-[20px] max-w-[1440px] mx-auto md:px-[40px] lg:px-[72px]">
           <motion.div
             initial="offscreen"
@@ -269,7 +265,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.8 }}
           >
             <motion.h2
-              className="text-5xl font-semibold tracking-tight text-gray-800 dark:text-white mb-12 md:mb-20 md:text-7xl"
+              className="text-5xl font-semibold tracking-tight text-gray-800 dark:text-white mb-16 md:mb-20 md:text-7xl"
               variants={headingVariants}
             >
               A small selection of{" "}
@@ -286,39 +282,10 @@ export default function Home() {
                 image={item.image}
                 imageAlt={item.imageAlt}
                 imageWidth={item.imageWidth}
-                onClick={() => setSelectedPortfolioId(item.id)}
                 animationVariant={opacityVariants}
+                slug={item.slug}
               />
             ))}
-            <AnimatePresence>
-              {selectedPortfolioId && (
-                <motion.div
-                  className="fixed bg-black/20 dark:bg-white/10 top-0 left-0 right-0 bottom-0 w-full h-full flex justify-center items-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, transition: { duration: 0.3 } }}
-                  exit={{ opacity: 0 }}
-                  onClick={() => setSelectedPortfolioId("")}
-                >
-                  <motion.div
-                    className="rounded-3xl px-6 py-[40px] md:py-[72px] bg-white dark:bg-[#121212] w-[calc(100%-40px)] max-w-[1296px] h-[90vh] relative"
-                    layoutId={selectedPortfolioId}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <div>
-                      <IoIosClose
-                        className="dark:text-white absolute top-3 right-3 cursor-pointer text-3xl"
-                        onClick={() => setSelectedPortfolioId("")}
-                      />
-                    </div>
-                    <div className="w-full max-w-4xl mx-auto">
-                      <h2 className="text-5xl font-semibold tracking-tight text-gray-800 dark:text-white mb-12 md:mb-20 md:text-7xl">
-                        {selectedPortfolio?.title || "Portfolio Title"}
-                      </h2>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
         </div>
       </section>
