@@ -23,7 +23,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
       <div className="px-[20px] max-w-[1440px] mx-auto md:px-[40px] lg:px-[72px]">
         <div className="flex flex-col xl:flex-row gap-y-5 justify-end relative items-center">
           <div className="static xl:absolute xl:left-0 xl:top-20 xl:w-1/2">
-            <h1 className="text-4xl text-center xl:text-start md:text-7xl text-gray-800 font-bold uppercase mix-blend-exclusion dark:text-white">
+            <h1 className="text-4xl text-center xl:text-start md:text-7xl text-gray-800 font-bold uppercase xl:mix-blend-exclusion dark:text-white">
               {portfolio.title}
             </h1>
           </div>
