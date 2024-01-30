@@ -1,7 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { MouseEventHandler } from "react";
 
 const variants = {
   offscreen: { opacity: 0, y: 0 },
