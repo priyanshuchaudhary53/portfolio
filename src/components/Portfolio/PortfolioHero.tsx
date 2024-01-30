@@ -20,8 +20,8 @@ const PortfolioHero = ({ portfolio }: { portfolio: any }) => {
           className="flex flex-col xl:flex-row gap-y-6 justify-end relative items-center"
           variants={opacityVariants}
         >
-          <div className="static xl:absolute xl:left-0 xl:top-24 xl:w-1/2">
-            <h1 className="text-4xl text-center xl:text-start xl:text-[5.5vw] xl:leading-none md text-gray-800 font-bold uppercase xl:mix-blend-exclusion dark:text-white">
+          <div className="static xl:absolute xl:left-0 xl:top-24 xl:w-1/3">
+            <h1 className="text-4xl text-center xl:text-start xl:text-7xl xl:leading-none md text-gray-800 font-bold uppercase xl:mix-blend-exclusion dark:text-white">
               {portfolio.title}
             </h1>
             <div className="flex flex-col items-center xl:items-start gap-1 mt-4 xl:mt-8">
@@ -35,7 +35,7 @@ const PortfolioHero = ({ portfolio }: { portfolio: any }) => {
               ))}
             </div>
           </div>
-          <div className="rounded-3xl w-full max-w-full xl:max-w-[60vw] aspect-[4/3] xl:aspect-auto xl:h-[45rem] overflow-clip border-2 bg-gray-200 dark:bg-gray-800 border-gray-200 dark:border-gray-800">
+          <div className="rounded-3xl w-full max-w-full xl:max-w-[70%] aspect-[4/3] xl:aspect-auto xl:h-[45rem] overflow-clip border-2 bg-gray-200 dark:bg-gray-800 border-gray-200 dark:border-gray-800">
             <Image
               src={`/images/portfolio/${portfolio.slug}/home.jpg`}
               className="object-cover w-full h-full object-left-top"
