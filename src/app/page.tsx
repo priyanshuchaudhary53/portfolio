@@ -1,12 +1,8 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import portrait from "../../public/images/portrait.jpg";
-import eternitech from "../../public/images/eternitech.png";
-import weanim8 from "../../public/images/weanim8.png";
-import leadsSupport from "../../public/images/leads-support.png";
-import anyonlinetool from "../../public/images/anyonlinetool.png";
 import { FiCamera } from "react-icons/fi";
 import { GoArrowUpRight, GoArrowRight } from "react-icons/go";
 
@@ -14,46 +10,13 @@ import AnimatedText from "@/components/Animation/AnimatedText";
 import AnimatedTextWrapper from "@/components/Animation/AnimatedTextWrapper";
 import PortfolioGridItem from "@/components/Portfolio/PortfolioGridItem";
 import SectionWrapper from "@/components/Layout/SectionWrapper";
-import { opacityVariants, headingVariants } from "@/components/Animation/Variants";
-
-const portfolioItems = [
-  {
-    id: "p1",
-    title: "Eternitech",
-    description: "WordPress website for a tech startup.",
-    image: eternitech,
-    imageAlt: "Eternitech Website Screenshot",
-    imageWidth: "w-[90%] sm:w-[75%]",
-    slug: "eternitech",
-  },
-  {
-    id: "p2",
-    title: "WeAnim8",
-    description: "WordPress website for an animation studio.",
-    image: weanim8,
-    imageAlt: "WeAnim8 Website Screenshot",
-    imageWidth: "w-[75%] sm:w-[63%]",
-    slug: "weanim8",
-  },
-  {
-    id: "p3",
-    title: "Leads Support",
-    description: "Laravel website for CRM and lead management.",
-    image: leadsSupport,
-    imageAlt: "Leads Support Website Screenshot",
-    imageWidth: "w-[85%] sm:w-[70%]",
-    slug: "leads-support",
-  },
-  {
-    id: "p4",
-    title: "AnyOnlineTool",
-    description: "Laravel website for online tools.",
-    image: anyonlinetool,
-    imageAlt: "AnyOnlineTool Website Screenshot",
-    imageWidth: "w-[82%] sm:w-[67%]",
-    slug: "anyonlinetool",
-  },
-];
+import {
+  opacityVariants,
+  headingVariants,
+} from "@/components/Animation/Variants";
+import { portfolioItems } from "@/data/portfolio";
+import PortfolioProjects from "@/components/Portfolio/PortfolioProjects";
+import ExternalLink from "@/components/UI/ExternalLink";
 
 export default function Home() {
   const mainText1 = "I'm a developer with a passion for crafting";
@@ -111,14 +74,10 @@ export default function Home() {
                 },
               }}
             >
-              <a
-                className="uppercase flex gap-3 items-center font-medium transition-opacity ease-out duration-300 text-gray-800 dark:text-white hover:opacity-60"
-                href="https://twitter.com/priyanshuch53"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                twitter <GoArrowUpRight className=" text-2xl" />
-              </a>
+              <ExternalLink
+                name="twitter"
+                link="https://twitter.com/priyanshuch53"
+              />
             </motion.div>
             <motion.div
               variants={{
@@ -130,14 +89,10 @@ export default function Home() {
                 },
               }}
             >
-              <a
-                className="uppercase flex gap-3 items-center font-medium transition-opacity ease-out duration-300 text-gray-800 dark:text-white hover:opacity-60"
-                href="https://www.linkedin.com/in/priyanshuchaudhary53/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                linkedin <GoArrowUpRight className=" text-2xl" />
-              </a>
+              <ExternalLink
+                name="linkedin"
+                link="https://www.linkedin.com/in/priyanshuchaudhary53/"
+              />
             </motion.div>
             <motion.div
               variants={{
@@ -149,14 +104,10 @@ export default function Home() {
                 },
               }}
             >
-              <a
-                className="uppercase flex gap-3 items-center font-medium transition-opacity ease-out duration-300 text-gray-800 dark:text-white hover:opacity-60"
-                href="https://github.com/priyanshuchaudhary53"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                github <GoArrowUpRight className=" text-2xl" />
-              </a>
+              <ExternalLink
+                name="github"
+                link="https://github.com/priyanshuchaudhary53"
+              />
             </motion.div>
           </motion.div>
           <motion.div initial="start" animate="end">
@@ -233,35 +184,10 @@ export default function Home() {
         </motion.div>
       </SectionWrapper>
 
-      <SectionWrapper>
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-        >
-          <motion.h2
-            className="text-5xl font-semibold tracking-tight text-gray-800 dark:text-white mb-16 md:mb-20 md:text-7xl"
-            variants={headingVariants}
-          >
-            A small selection of <span className="text-gray-400">my work.</span>
-          </motion.h2>
-        </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14">
-          {portfolioItems.map((item) => (
-            <PortfolioGridItem
-              id={item.id}
-              key={item.title}
-              title={item.title}
-              description={item.description}
-              image={item.image}
-              imageAlt={item.imageAlt}
-              imageWidth={item.imageWidth}
-              animationVariant={opacityVariants}
-              slug={item.slug}
-            />
-          ))}
-        </div>
-      </SectionWrapper>
+      <PortfolioProjects
+        title="A small selection of my work."
+        portfolioItems={portfolioItems}
+      />
     </>
   );
 }

@@ -5,6 +5,8 @@ import Image from "next/image";
 
 import SectionWrapper from "@/components/Layout/SectionWrapper";
 import { opacityVariants } from "@/components/Animation/Variants";
+import Link from "next/link";
+import ExternalLink from "../UI/ExternalLink";
 
 const PortfolioHero = ({ portfolio }: { portfolio: any }) => {
   const technologies = portfolio.techstack;
@@ -33,6 +35,9 @@ const PortfolioHero = ({ portfolio }: { portfolio: any }) => {
                   {technology}
                 </div>
               ))}
+            </div>
+            <div className="flex justify-center xl:justify-start mt-3 xl:mt-6">
+              <ExternalLink name="visit website" link={portfolio.url} />
             </div>
           </div>
           <div className="rounded-3xl w-full max-w-full xl:max-w-[70%] aspect-[4/3] xl:aspect-auto xl:h-[45rem] overflow-clip border-2 bg-gray-200 dark:bg-gray-800 border-gray-200 dark:border-gray-800">
