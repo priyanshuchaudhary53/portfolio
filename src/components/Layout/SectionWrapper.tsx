@@ -9,8 +9,9 @@ const SectionWrapper = ({
   className?: string;
   size?: "regular" | "extended";
 }) => {
+  const classNameDefault = "py-14 lg:py-20" + (className ? " " + className : "");
   return (
-    <section className={`py-14 lg:py-20 ${className}`}>
+    <section className={classNameDefault}>
       <div
         className={`px-[20px] max-w-[1440px] mx-auto md:px-[40px] lg:px-[72px] ${
           size === "extended" ? "max-w-[1760px]" : "max-w-[1440px]"

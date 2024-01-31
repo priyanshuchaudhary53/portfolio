@@ -12,7 +12,7 @@ const PortfolioHero = ({ portfolio }: { portfolio: any }) => {
   const technologies = portfolio.techstack;
 
   return (
-    <SectionWrapper size="extended">
+    <SectionWrapper size="extended" className="lg:pt-14 xl:pt-20">
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
