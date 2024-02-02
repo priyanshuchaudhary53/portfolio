@@ -17,6 +17,7 @@ import {
 import { portfolioItems } from "@/data/portfolio";
 import PortfolioProjects from "@/components/Portfolio/PortfolioProjects";
 import ExternalLink from "@/components/UI/ExternalLink";
+import Testimonials from "@/components/Testimonial/Testimonials";
 
 export default function Home() {
   const mainText1 = "I'm a developer with a passion for crafting";
@@ -188,6 +189,27 @@ export default function Home() {
         title="A small selection of my work."
         portfolioItems={portfolioItems}
       />
+
+      <SectionWrapper>
+        <div className="flex flex-col xl:flex-row gap-y-8 gap-x-20">
+          <motion.div
+            className="flex-1"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.h2
+              className="text-4xl text-center md:text-start font-semibold tracking-tight text-gray-800 dark:text-white mb-[20px] md:text-6xl"
+              variants={headingVariants}
+            >
+              Hear firsthand accounts and praise from clients
+            </motion.h2>
+          </motion.div>
+          <div>
+            <Testimonials />
+          </div>
+        </div>
+      </SectionWrapper>
     </>
   );
 }
