@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
             <div className=" shrink-0">
               <a
-                href="#"
+                href="mailto:contact@priyanshuc.dev"
                 className="inline-block p-4 rounded-full bg-gray-600 transition-opacity ease-out duration-300 hover:opacity-80"
               >
                 <GoArrowUpRight className="text-white w-10 h-10" />
