@@ -16,13 +16,13 @@ const Header = () => {
         </div>
         <div className="flex items-center gap-4 md:gap-6">
           <DarkModeSwitcher />
-          <motion.div
+          {/* <motion.div
             className="text-gray-800 text-2xl py-[12px] px-[24px] border rounded-full border-gray-800 cursor-pointer dark:border-white dark:text-white"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <RxHamburgerMenu />
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </header>
