@@ -7,7 +7,7 @@ import DarkModeSwitcher from "../DarkModeSwitcher";
 
 const Header = () => {
   return (
-    <header className="py-[20px] md:py-[24px]">
+    <header className="py-[30px] md:py-[34px]"> {/* py-[20px] md:py-[24px] */}
       <div className="px-[20px] max-w-[1440px] mx-auto flex justify-between items-center md:px-[40px] lg:px-[72px]">
         <div className="text-2xl font-bold tracking-tight">
           <Link href="/" className="text-gray-800 dark:text-white">
